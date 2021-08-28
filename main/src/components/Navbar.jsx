@@ -10,7 +10,7 @@ import {
 import SearchIcon from "@material-ui/icons/Search";
 import InputBase from "@material-ui/core/InputBase";
 import { alpha } from "@material-ui/core/styles";
-import { Notifications } from "@material-ui/icons";
+import { Cancel, Notifications } from "@material-ui/icons";
 
 import MailIcon from "@material-ui/icons/Mail";
 
@@ -49,18 +49,24 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
+  cancel: {
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+  },
 }));
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const classes = useStyles({ open });
   return (
-    <AppBar>
+    <AppBar position="static">
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6">HOME</Typography>
         <div className={classes.search}>
           <SearchIcon />
           <InputBase placeholder="Search..." />
+          <Cancel className={classes.cancel} onClick={() => setOpen(false)} />
         </div>
         <div className={classes.icons}>
           <SearchIcon
