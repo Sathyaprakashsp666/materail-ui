@@ -13,8 +13,14 @@ import { alpha } from "@material-ui/core/styles";
 import { Cancel, Notifications } from "@material-ui/icons";
 
 import MailIcon from "@material-ui/icons/Mail";
+import CameraEnhanceIcon from "@material-ui/icons/CameraEnhance";
 
 const useStyles = makeStyles((theme) => ({
+  appbar: {
+    position: "sticky",
+    bottom: 0,
+    top: 0,
+  },
   toolbar: {
     display: "flex",
     justifyContent: "space-between",
@@ -60,7 +66,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const classes = useStyles({ open });
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={classes.appbar}>
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6">HOME</Typography>
         <div className={classes.search}>
@@ -79,7 +85,10 @@ const Navbar = () => {
           <Badge badgeContent={2} color="error" className={classes.badge}>
             <Notifications />
           </Badge>
-          <Avatar alt="Remy Sharp" src="" />
+          <Avatar
+            alt="Remy Sharp"
+            src="https://material-ui.com/static/images/avatar/1.jpg"
+          />
         </div>
       </Toolbar>
     </AppBar>

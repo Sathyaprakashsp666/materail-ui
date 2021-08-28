@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import Sidebar from "./Rightbar";
 import Feed from "./Feed";
 import { makeStyles } from "@material-ui/core";
+import Add from "./Add";
 
 const useStyles = makeStyles((theme) => ({
   right: {
@@ -29,6 +30,7 @@ const Home = () => {
           <Sidebar />
         </Grid>
       </Grid>
+      <Add />
     </div>
   );
 };
